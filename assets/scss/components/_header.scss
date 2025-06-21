@@ -1,0 +1,62 @@
+@use "@/assets/scss/variables" as vars;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: vars.$color-white;
+  border-bottom: 1px solid vars.$color-border;
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: vars.$color-text;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        color: vars.$color-primary;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+
+    .cart {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: vars.$color-primary;
+      color: vars.$color-white;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      transition: background 0.2s ease;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      i {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
