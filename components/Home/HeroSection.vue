@@ -1,5 +1,5 @@
 <template>
-  <section class="py-4 md:py-4 min-h-[500px]">
+  <section class="py-4 md:py-10 min-h-[500px]">
     <div class="max-w-screen-xl mx-auto grid grid-cols-12 gap-4 md:gap-4 px-4 items-center">
       <!-- Left content -->
       <div class="col-span-12 md:col-span-4 bg-secondary rounded-3xl p-4 md:p-8 flex flex-col gap-1 h-full justify-between">
