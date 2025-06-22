@@ -1,8 +1,0 @@
-@use "variables" as vars;
-@use "components/header";
-
-body {
-  font-family: vars.$font-primary;
-  color: vars.$color-text;
-  background: vars.$color-white;
-}
