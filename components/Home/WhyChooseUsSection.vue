@@ -1,9 +1,11 @@
 <template>
   <section class="relative">
     <!-- Background Image -->
-    <img
+    <NuxtImg
       src="/images/why-choose-us.png"
       alt="Onbaby neden"
+      width="1920"
+      height="700"
       class="w-full h-[700px] object-cover"
     />
 
@@ -33,16 +35,21 @@
         <div class="max-w-screen-xl mx-auto flex justify-end">
           <div class="text-right text-white">
             <p class="text-sm text-white/80 mb-4 max-w-md">
-              Su geçirmez, kaymaz yapısıyla Onbaby örtüleri hem oyun hem yemek aktiviteleri için ideal!
+              Su geçirmez, kaymaz yapısıyla Onbaby örtüleri hem oyun hem yemek
+              aktiviteleri için ideal!
             </p>
 
             <div class="flex flex-wrap gap-4 justify-end">
-              <button class="bg-primary text-white px-6 py-3 rounded-lg flex items-center gap-2">
+              <button
+                class="bg-primary text-white px-6 py-3 rounded-lg flex items-center gap-2"
+              >
                 Siz de Deneyin
                 <Icon name="uil:arrow-right" class="w-5 h-5 text-white" />
               </button>
 
-              <button class="bg-transparent text-white px-6 py-3 rounded-lg border border-white">
+              <button
+                class="bg-transparent text-white px-6 py-3 rounded-lg border border-white"
+              >
                 Hakkımızda
               </button>
             </div>

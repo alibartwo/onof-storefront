@@ -3,62 +3,59 @@
     <div
       class="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-4"
     >
-      <!-- Logo ve Navigasyon -->
-      <div class="flex items-center gap-8">
-        <!-- Logo -->
+      <!-- Logo ve Navigation -->
+      <div class="flex items-center gap-4 md:gap-8">
         <NuxtLink to="/" class="shrink-0">
-          <img src="/images/onofset-logo.png" alt="Logo" class="h-12" />
+          <img src="/images/logo.png" alt="Logo" class="h-10 md:h-12" />
         </NuxtLink>
-
-        <!-- Separator -->
-        <div class="w-px h-8 bg-gray-300 opacity-30"></div>
-
-        <!-- Menü -->
+        <div class="hidden md:block w-px h-8 bg-gray-300 opacity-30" />
         <nav
-          class="flex items-center gap-6 text-sm font-semibold text-gray-600"
+          class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600"
         >
-          <NuxtLink
-            to="/"
-            class="hover:text-primary transition-colors duration-200"
+          <NuxtLink to="/" class="hover:text-primary">Anasayfa</NuxtLink>
+
+          <NuxtLink to="/hakkimizda" class="hover:text-primary"
+            >Hakkımızda</NuxtLink
           >
-            Anasayfa
-          </NuxtLink>
-          <NuxtLink
-            to="/urunler"
-            class="hover:text-primary transition-colors duration-200"
+          <NuxtLink to="/urunler" class="hover:text-primary">Ürünler</NuxtLink>
+          <NuxtLink to="/blog" class="hover:text-primary">Blog</NuxtLink>
+          <NuxtLink to="/iletisim" class="hover:text-primary"
+            >İletişim</NuxtLink
           >
-            Ürünler
-          </NuxtLink>
-          <NuxtLink
-            to="/hakkimizda"
-            class="hover:text-primary transition-colors duration-200"
-          >
-            Hakkımızda
-          </NuxtLink>
-          <NuxtLink
-            to="/iletisim"
-            class="hover:text-primary transition-colors duration-200"
-          >
-            İletişim
-          </NuxtLink>
         </nav>
       </div>
 
-      <!-- Right -->
-      <div class="flex items-center gap-3">
+      <!-- Sağ Butonlar (Desktop) -->
+      <div class="hidden md:flex items-center gap-3">
         <NuxtLink
           to="/auth/giris"
-          class="px-5 py-2 rounded-lg border border-primary text-primary text-sm font-medium hover:bg-primary/5 transition-all duration-200"
+          class="text-primary border border-primary px-5 py-2 rounded-lg text-sm"
+          >Kullanıcı Girişi</NuxtLink
         >
-          Kullanıcı Girişi
-        </NuxtLink>
         <NuxtLink
           to="/sepet"
-          class="px-5 py-2 rounded-lg bg-primary text-lg text-white hover:bg-primary/90 transition-all duration-200 flex items-center gap-1"
+          class="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-1"
         >
-          <Icon name="uil:shopping-cart" class="w-12 h-12 text-white" />
+          <Icon name="uil:shopping-cart" class="w-6 h-6" />
         </NuxtLink>
       </div>
+
+      <!-- Hamburger Icon (Mobile) -->
+      <button
+        class="md:hidden text-gray-600 hover:text-primary"
+        @click="isMobileMenuOpen = !isMobileMenuOpen"
+      >
+        <Icon name="mdi:menu" class="w-7 h-7" />
+      </button>
     </div>
+
+    <TheNavigation v-if="isMobileMenuOpen" @close="isMobileMenuOpen = false" />
   </header>
 </template>
+
+<script setup>
+import TheNavigation from "~/components/Layout/TheNavigation.vue";
+import { ref } from "vue";
+
+const isMobileMenuOpen = ref(false);
+</script>

@@ -64,10 +64,12 @@
               </div>
             </div>
             <div class="flex-1">
-              <img
+              <NuxtImg
                 src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
-                class="w-full h-full object-cover"
+                width="800"
+                height="600"
+                class="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>
@@ -95,10 +97,12 @@
               </div>
             </div>
             <div class="flex-1">
-              <img
+              <NuxtImg
                 src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
-                class="w-full h-full object-cover"
+                width="800"
+                height="600"
+                class="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>
@@ -126,10 +130,12 @@
               </div>
             </div>
             <div class="flex-1">
-              <img
+              <NuxtImg
                 src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
-                class="w-full h-full object-cover"
+                width="800"
+                height="600"
+                class="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>

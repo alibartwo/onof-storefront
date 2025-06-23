@@ -19,5 +19,5 @@ import HomeVideoSection from '~/components/Home/HomeVideoSection.vue'
 import TestimonialSection from '~/components/Home/TestimonialSection.vue'
 import HomeBlogSection from '~/components/Home/HomeBlogSection.vue'
 import FaqSection from '~/components/Faq/FaqSection.vue'
-import InstagramSection from '~/components/Home/InstagramSection.vue'
+import InstagramSection from '~/components/Common/InstagramSection.vue'
 </script>

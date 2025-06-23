@@ -5,7 +5,7 @@
     >
       <!-- Logo & Description -->
       <div class="md:col-span-6 space-y-4">
-        <img src="/images/onofset-logo.png" alt="Logo" class="h-14" />
+        <img src="/images/logo.png" alt="Logo" class="h-14" />
         <p class="text-sm text-gray-600 max-w-sm leading-relaxed">
           Kalite ve güveni bir araya getirerek çocuklara özel çözümler
           sunuyoruz. Onbaby, her aşamada ailenizin yanında.
