@@ -65,7 +65,7 @@
             </div>
             <div class="flex-1">
               <img
-                src="/images/hero-img.jpg"
+                src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
                 class="w-full h-full object-cover"
               />
@@ -96,7 +96,7 @@
             </div>
             <div class="flex-1">
               <img
-                src="/images/hero-img.jpg"
+                src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
                 class="w-full h-full object-cover"
               />
@@ -127,7 +127,7 @@
             </div>
             <div class="flex-1">
               <img
-                src="/images/hero-img.jpg"
+                src="/images/testimonials-1.png"
                 alt="Müşteri yorumu"
                 class="w-full h-full object-cover"
               />
@@ -139,8 +139,6 @@
       <!-- Custom navigation buttons below Swiper -->
       <div class="mt-6 flex justify-center gap-4">
         <button
-          @click="testimonialSwiper?.swiper?.slidePrev()"
-          class="custom-swiper-prev w-12 h-12 flex items-center justify-center text-2xl"
           :class="[
             activeIndex === 0
               ? 'bg-secondary text-black'
@@ -148,12 +146,12 @@
             'rounded-full',
             'hover:brightness-110 hover:opacity-90 transition duration-300',
           ]"
+          class="custom-swiper-prev w-12 h-12 flex items-center justify-center text-2xl"
+          @click="testimonialSwiper?.swiper?.slidePrev()"
         >
           ‹
         </button>
         <button
-          @click="testimonialSwiper?.swiper?.slideNext()"
-          class="custom-swiper-next w-12 h-12 flex items-center justify-center text-2xl"
           :class="[
             activeIndex === 2
               ? 'bg-secondary text-black'
@@ -161,6 +159,8 @@
             'rounded-full',
             'hover:brightness-110 hover:opacity-90 transition duration-300',
           ]"
+          class="custom-swiper-next w-12 h-12 flex items-center justify-center text-2xl"
+          @click="testimonialSwiper?.swiper?.slideNext()"
         >
           ›
         </button>
@@ -172,7 +172,7 @@
 <script setup>
 import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

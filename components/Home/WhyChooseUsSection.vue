@@ -2,7 +2,7 @@
   <section class="relative">
     <!-- Background Image -->
     <img
-      src="/images/hero-img.jpg"
+      src="/images/why-choose-us.png"
       alt="Onbaby neden"
       class="w-full h-[700px] object-cover"
     />

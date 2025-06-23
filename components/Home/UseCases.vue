@@ -12,14 +12,14 @@
         </p>
       </div>
       <img
-        src="/images/hero-img.jpg"
+        src="/images/use-case-1.png"
         alt="Piknik kullanım"
         class="rounded-3xl w-full h-full object-cover"
       />
 
       <!-- Block 2 -->
       <img
-        src="/images/hero-img.jpg"
+        src="/images/use-case-2.png"
         alt="Okul kullanım"
         class="rounded-3xl w-full h-full object-cover"
       />
@@ -44,7 +44,7 @@
         </p>
       </div>
       <img
-        src="/images/hero-img.jpg"
+        src="/images/use-case-3.png"
         alt="Sağlık kullanım"
         class="rounded-3xl w-full h-full object-cover"
       />

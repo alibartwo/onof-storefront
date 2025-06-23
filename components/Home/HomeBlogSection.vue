@@ -16,16 +16,16 @@
         </div>
         <div class="flex gap-4 pt-8 self-start">
           <button
-            @click="blogSwiper?.slidePrev()"
-            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
             :class="blogIndex === 0 ? 'bg-secondary text-black' : 'bg-primary text-white'"
+            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
+            @click="blogSwiper?.slidePrev()"
           >
             ‹
           </button>
           <button
-            @click="blogSwiper?.slideNext()"
-            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
             :class="blogIndex === blogs.length - 1 ? 'bg-secondary text-black' : 'bg-primary text-white'"
+            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
+            @click="blogSwiper?.slideNext()"
           >
             ›
           </button>
@@ -47,7 +47,7 @@
           :breakpoints="{ 768: { slidesPerView: 2 }, 1024: { slidesPerView: 2 } }"
           class="pt-4"
           @swiper="onSwiperInit"
-          @slideChange="onSlideChange"
+          @slide-change="onSlideChange"
         >
           <SwiperSlide v-for="(blog, i) in blogs" :key="i" class="pr-4 pb-1">
             <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-[1.01] bg-white">
@@ -75,17 +75,17 @@ const blogs = [
   {
     title: 'Kullan At Ürünler Ne Kadar Hijyenik?',
     date: '17 Haziran 2025',
-    image: '/images/hero-img.jpg'
+    image: '/images/blog-1.png'
   },
   {
     title: 'Çocuklar İçin Güvenli Etkinlik Alanları',
     date: '10 Haziran 2025',
-    image: '/images/hero-img.jpg'
+    image: '/images/blog-2.png'
   },
   {
     title: 'Sınıf Hijyeninde Yeni Trendler',
     date: '3 Haziran 2025',
-    image: '/images/hero-img.jpg'
+    image: '/images/blog-1.png'
   }
 ]
 
