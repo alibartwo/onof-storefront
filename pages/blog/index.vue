@@ -24,6 +24,7 @@
           :excerpt="post.excerpt"
           :image="post.image"
           :slug="post.slug"
+          :date="post.date"
         />
       </div>
     </div>
@@ -40,6 +41,7 @@ const posts = [
       "Evde ve dış mekanda çocuklar için temiz, güvenli ve eğlenceli ortamlar yaratmanın yolları...",
     image: "/images/hero-img.jpg",
     slug: "hijyenik-oyun-alanlari",
+    date:"2023-10-01",
   },
   {
     title: "Çocuklarda Sağlıklı Uyku Rutini Oluşturmak",
@@ -47,6 +49,7 @@ const posts = [
       "Uyku düzeni, çocuk gelişiminin en önemli parçalarındandır. İşte birkaç öneri...",
     image: "/images/hero-img.jpg",
     slug: "saglikli-uyku-rutini",
+    date:"2023-10-01",
   },
   {
     title: "Oyun Halısı Temizliği Nasıl Yapılır?",
@@ -54,6 +57,7 @@ const posts = [
       "Oyun halıları hijyenin sağlanması açısından önemlidir. Temizlik ve bakım tüyoları...",
     image: "/images/hero-img.jpg",
     slug: "oyun-halisi-temizligi",
+    date:"2023-10-01",
   },
   {
     title: "Bebeklerde Güvenli Oyun Ortamı",
@@ -61,6 +65,7 @@ const posts = [
       "Bebekler için güvenli, hijyenik ve uyarıcı bir oyun alanı nasıl oluşturulur?",
     image: "/images/hero-img.jpg",
     slug: "bebeklerde-guvenli-oyun",
+    date:"2023-10-01",
   },
   {
     title: "Evde Hijyen Kuralları ile Yaşamak",
@@ -68,6 +73,7 @@ const posts = [
       "Aileler için kolay uygulanabilir temizlik ve hijyen ipuçları bu yazıda.",
     image: "/images/hero-img.jpg",
     slug: "evde-hijyen-kurallari",
+    date:"2023-10-01",
   },
 ];
 </script>

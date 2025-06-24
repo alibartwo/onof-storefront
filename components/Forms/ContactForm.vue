@@ -2,14 +2,14 @@
   <section class="bg-white py-16 px-4">
     <div class="max-w-screen-md mx-auto">
       <!-- Form -->
-      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4" @submit.prevent="handleSubmit">
         <!-- Name -->
         <div>
           <label class="block text-sm font-semibold text-gray-700 mb-1">İsim</label>
           <input
             type="text"
             placeholder="Deniz Yılmaz"
-            class="w-full bg-gray-100 text-gray-700 rounded-full px-6 py-3 outline-none focus:ring-2 focus:ring-primary"
+            class="w-full bg-gray-100 text-gray-700 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -19,7 +19,7 @@
           <input
             type="email"
             placeholder="e-posta@adresiniz.com"
-            class="w-full bg-gray-100 text-gray-700 rounded-full px-6 py-3 outline-none focus:ring-2 focus:ring-primary"
+            class="w-full bg-gray-100 text-gray-700 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -29,7 +29,7 @@
           <input
             type="text"
             placeholder="+90 123 456 7890"
-            class="w-full bg-gray-100 text-gray-700 rounded-full px-6 py-3 outline-none focus:ring-2 focus:ring-primary"
+            class="w-full bg-gray-100 text-gray-700 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -39,7 +39,7 @@
           <input
             type="text"
             placeholder="Yılmaz Gıda Sanayi"
-            class="w-full bg-gray-100 text-gray-700 rounded-full px-6 py-3 outline-none focus:ring-2 focus:ring-primary"
+            class="w-full bg-gray-100 text-gray-700 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-primary"
           />
         </div>
 
@@ -49,18 +49,18 @@
           <textarea
             rows="5"
             placeholder="Merhaba, ..."
-            class="w-full bg-gray-100 text-gray-700 rounded-2xl px-6 py-4 outline-none focus:ring-2 focus:ring-primary resize-none"
+            class="w-full bg-gray-100 text-gray-700 rounded-md px-4 py-4 outline-none focus:ring-2 focus:ring-primary resize-none"
           />
         </div>
 
         <!-- Submit & Socials -->
         <div class="md:col-span-2 flex flex-col sm:flex-row justify-between items-start sm:items-center mt-4 gap-4">
-          <button
-            type="submit"
-            class="bg-primary text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-primary-dark transition"
-          >
-            Gönderin →
-          </button>
+          <BaseButton
+            type="primary"
+            label="Gönderin →"
+            class="w-full sm:w-auto justify-center"
+            @click="handleSubmit"
+          />
 
           <!-- Social icons -->
           <div class="flex gap-3">
@@ -83,3 +83,10 @@
   </section>
 </template>
 
+<script setup lang="ts">
+import BaseButton from '~/components/Base/BaseButton.vue'
+
+const handleSubmit = () => {
+  console.log('Form gönderildi')
+}
+</script>

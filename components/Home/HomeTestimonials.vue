@@ -1,29 +1,28 @@
 <template>
-  <section class="py-24 px-4">
+  <section class="px-4 py-24">
     <div class="max-w-screen-xl mx-auto">
       <div
-        class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10"
+        class="flex flex-col items-start justify-between mb-10 md:flex-row md:items-center"
       >
         <div>
           <h3
-            class="text-sm text-primary tracking-widest uppercase font-semibold"
+            class="text-sm font-semibold tracking-widest uppercase text-primary"
           >
             Kullanıcı Yorumları
           </h3>
-          <h2 class="text-3xl font-bold text-primary mt-2">
+          <h2 class="mt-2 text-3xl font-bold text-primary">
             Onbaby Kullananlar Ne Diyor?
           </h2>
-          <p class="text-sm text-gray-500 mt-2 max-w-md">
+          <p class="max-w-md mt-2 text-sm text-gray-500">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             varius elementum tristique.
           </p>
         </div>
         <div class="mt-4 md:mt-0">
-          <button
-            class="bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition text-sm"
-          >
-            Tüm Yorumları Gör →
-          </button>
+          <BaseButton
+  label="Tüm Yorumları Gör →"
+  type="primary"
+/>
         </div>
       </div>
 
@@ -37,15 +36,15 @@
           nextEl: '.custom-swiper-next',
           prevEl: '.custom-swiper-prev',
         }"
-        class="rounded-xl overflow-hidden"
+        class="overflow-hidden rounded-xl"
         @swiper="onSwiperInit"
       >
         <SwiperSlide>
           <div
-            class="bg-secondary flex flex-col md:flex-row items-stretch gap-0 rounded-xl overflow-hidden"
+            class="flex flex-col items-stretch gap-0 overflow-hidden bg-secondary md:flex-row rounded-xl"
           >
             <div class="flex-1 p-10">
-              <p class="text-xl font-semibold text-gray-800 leading-relaxed">
+              <p class="text-xl font-semibold leading-relaxed text-gray-800">
                 “ Etkinlik sırasında çocuklar özgürce boyama yapabiliyor, ben de
                 temizlikle zaman kaybetmiyorum. Hijyen açısından da çok rahatım.
                 Her sınıf için ideal! Çocukların yaratıcı yönlerini özgürce
@@ -54,7 +53,7 @@
                 tamamlayabiliyoruz. ”
               </p>
               <div
-                class="mt-4 flex items-center space-x-2 text-yellow-500 text-lg"
+                class="flex items-center mt-4 space-x-2 text-lg text-yellow-500"
               >
                 <span>★★★★★</span>
               </div>
@@ -69,7 +68,7 @@
                 alt="Müşteri yorumu"
                 width="800"
                 height="600"
-                class="w-full h-full object-cover rounded-2xl"
+                class="object-cover w-full h-full rounded-2xl"
               />
             </div>
           </div>
@@ -77,17 +76,17 @@
 
         <SwiperSlide>
           <div
-            class="bg-secondary flex flex-col md:flex-row items-stretch gap-0 rounded-3xl overflow-hidden"
+            class="flex flex-col items-stretch gap-0 overflow-hidden bg-secondary md:flex-row rounded-3xl"
           >
             <div class="flex-1 p-10">
-              <p class="text-xl font-semibold text-gray-800 leading-relaxed">
+              <p class="text-xl font-semibold leading-relaxed text-gray-800">
                 “ Temizlik derdi olmadan harika vakit geçirdik. Kullanımı çok
                 kolay ve pratik. Çocuklar etkinlik boyunca rahat etti, ben de
                 sonrasında temizlikle uğraşmadım. Bu tür ürünler sınıflar için
                 büyük kolaylık sağlıyor. ”
               </p>
               <div
-                class="mt-4 flex items-center space-x-2 text-yellow-500 text-lg"
+                class="flex items-center mt-4 space-x-2 text-lg text-yellow-500"
               >
                 <span>★★★★★</span>
               </div>
@@ -102,7 +101,7 @@
                 alt="Müşteri yorumu"
                 width="800"
                 height="600"
-                class="w-full h-full object-cover rounded-2xl"
+                class="object-cover w-full h-full rounded-2xl"
               />
             </div>
           </div>
@@ -110,17 +109,17 @@
 
         <SwiperSlide>
           <div
-            class="bg-secondary flex flex-col md:flex-row items-stretch gap-0 rounded-3xl overflow-hidden"
+            class="flex flex-col items-stretch gap-0 overflow-hidden bg-secondary md:flex-row rounded-3xl"
           >
             <div class="flex-1 p-10">
-              <p class="text-xl font-semibold text-gray-800 leading-relaxed">
+              <p class="text-xl font-semibold leading-relaxed text-gray-800">
                 “ Her öğretmene tavsiye ederim. Güvenli ve pratik. Çocukların
                 güvenliği için tasarlanmış olması ve kolay temizlenebilir yapısı
                 sayesinde sınıf ortamında rahatlıkla kullanabiliyorum. Hem
                 çocuklar hem ben çok memnunuz. ”
               </p>
               <div
-                class="mt-4 flex items-center space-x-2 text-yellow-500 text-lg"
+                class="flex items-center mt-4 space-x-2 text-lg text-yellow-500"
               >
                 <span>★★★★★</span>
               </div>
@@ -135,7 +134,7 @@
                 alt="Müşteri yorumu"
                 width="800"
                 height="600"
-                class="w-full h-full object-cover rounded-2xl"
+                class="object-cover w-full h-full rounded-2xl"
               />
             </div>
           </div>
@@ -143,7 +142,7 @@
       </Swiper>
 
       <!-- Custom navigation buttons below Swiper -->
-      <div class="mt-6 flex justify-center gap-4">
+      <div class="flex justify-center gap-4 mt-6">
         <button
           :class="[
             activeIndex === 0
@@ -152,7 +151,7 @@
             'rounded-full',
             'hover:brightness-110 hover:opacity-90 transition duration-300',
           ]"
-          class="custom-swiper-prev w-12 h-12 flex items-center justify-center text-2xl"
+          class="flex items-center justify-center w-12 h-12 text-2xl custom-swiper-prev"
           @click="testimonialSwiper?.swiper?.slidePrev()"
         >
           ‹
@@ -165,7 +164,7 @@
             'rounded-full',
             'hover:brightness-110 hover:opacity-90 transition duration-300',
           ]"
-          class="custom-swiper-next w-12 h-12 flex items-center justify-center text-2xl"
+          class="flex items-center justify-center w-12 h-12 text-2xl custom-swiper-next"
           @click="testimonialSwiper?.swiper?.slideNext()"
         >
           ›

@@ -1,38 +1,34 @@
 <template>
-  <section class="relative py-12 px-4">
+  <section class="relative px-4 py-12">
     <div
-      class="bg-secondary rounded-3xl max-w-screen-xl mx-auto px-12 py-12 flex flex-col md:flex-row items-stretch justify-between gap-8 relative h-full"
+      class="relative flex flex-col items-stretch justify-between h-full max-w-screen-xl gap-8 px-12 py-12 mx-auto bg-secondary rounded-3xl md:flex-row"
     >
-      <div class="md:w-5/12 z-0 flex flex-col justify-between h-full">
+      <div class="z-0 flex flex-col justify-between h-full md:w-5/12">
         <div class="flex-grow md:h-[330px]">
           <h3
-            class="text-sm text-primary tracking-widest uppercase font-semibold"
+            class="text-sm font-semibold tracking-widest uppercase text-primary"
           >
             Blog
           </h3>
-          <h2 class="text-3xl font-bold text-primary mt-2">
+          <h2 class="mt-2 text-3xl font-bold text-primary">
             Güncel Yazılarla Yanınızdayız
           </h2>
-          <p class="text-gray-500 mt-2 max-w-md">
+          <p class="max-w-md mt-2 text-gray-500">
             Çocuk gelişimi, hijyen, pratik öneriler ve daha fazlası blog
             sayfamızda.
           </p>
           <div class="mt-6">
-            <button
-              class="bg-primary text-white px-5 py-3 rounded hover:bg-primary-dark transition text-sm"
-            >
-              Tümünü Gör →
-            </button>
+            <BaseButton label="Tümünü Gör →" type="primary" />
           </div>
         </div>
-        <div class="flex gap-4 pt-8 self-start">
+        <div class="flex self-start gap-4 pt-8">
           <button
             :class="
               blogIndex === 0
                 ? 'bg-secondary text-black'
                 : 'bg-primary text-white'
             "
-            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
+            class="flex items-center justify-center w-12 h-12 text-2xl transition duration-300 rounded-full hover:brightness-110 hover:opacity-90"
             @click="blogSwiper?.slidePrev()"
           >
             ‹
@@ -43,7 +39,7 @@
                 ? 'bg-secondary text-black'
                 : 'bg-primary text-white'
             "
-            class="w-12 h-12 flex items-center justify-center text-2xl rounded-full hover:brightness-110 hover:opacity-90 transition duration-300"
+            class="flex items-center justify-center w-12 h-12 text-2xl transition duration-300 rounded-full hover:brightness-110 hover:opacity-90"
             @click="blogSwiper?.slideNext()"
           >
             ›
@@ -51,7 +47,7 @@
         </div>
       </div>
 
-      <div class="md:w-7/12 relative z-10">
+      <div class="relative z-10 md:w-7/12">
         <Swiper
           ref="swiperRef"
           :modules="[Autoplay, Navigation]"
@@ -71,7 +67,7 @@
           @swiper="onSwiperInit"
           @slide-change="onSlideChange"
         >
-          <SwiperSlide v-for="(blog, i) in blogs" :key="i" class="pr-4 pb-1">
+          <SwiperSlide v-for="(blog, i) in blogs" :key="i" class="pb-1 pr-4">
             <div
               class="rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-transform transform hover:scale-[1.01] bg-white"
             >
@@ -83,10 +79,10 @@
                 class="w-full h-[300px] object-cover rounded-2xl"
               />
               <div class="p-4">
-                <h3 class="text-lg font-semibold text-gray-900 leading-tight">
+                <h3 class="text-lg font-semibold leading-tight text-gray-900">
                   {{ blog.title }}
                 </h3>
-                <p class="text-sm text-gray-500 mt-2">{{ blog.date }}</p>
+                <p class="mt-2 text-sm text-gray-500">{{ blog.date }}</p>
               </div>
             </div>
           </SwiperSlide>

@@ -1,19 +1,18 @@
 <template>
   <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
     <div
-      class="max-w-screen-xl mx-auto flex items-center justify-between px-6 py-4"
+      class="flex items-center justify-between max-w-screen-xl px-6 py-4 mx-auto"
     >
       <!-- Logo ve Navigation -->
       <div class="flex items-center gap-4 md:gap-8">
         <NuxtLink to="/" class="shrink-0">
           <img src="/images/logo.png" alt="Logo" class="h-10 md:h-12" />
         </NuxtLink>
-        <div class="hidden md:block w-px h-8 bg-gray-300 opacity-30" />
+        <div class="hidden w-px h-8 bg-gray-300 md:block opacity-30" />
         <nav
-          class="hidden md:flex items-center gap-6 text-sm font-semibold text-gray-600"
+          class="items-center hidden gap-6 text-sm font-semibold text-gray-600 md:flex"
         >
           <NuxtLink to="/" class="hover:text-primary">Anasayfa</NuxtLink>
-
           <NuxtLink to="/hakkimizda" class="hover:text-primary"
             >Hakkımızda</NuxtLink
           >
@@ -26,23 +25,24 @@
       </div>
 
       <!-- Sağ Butonlar (Desktop) -->
-      <div class="hidden md:flex items-center gap-3">
-        <NuxtLink
+      <div class="items-center hidden gap-3 md:flex">
+        <BaseButton
           to="/auth/giris"
-          class="text-primary border border-primary px-5 py-2 rounded-lg text-sm"
-          >Kullanıcı Girişi</NuxtLink
-        >
-        <NuxtLink
+          label="Kullanıcı Girişi"
+          type="secondary"
+        />
+        <BaseButton
           to="/sepet"
-          class="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-1"
-        >
-          <Icon name="uil:shopping-cart" class="w-6 h-6" />
-        </NuxtLink>
+          type="primary"
+          icon="uil:shopping-cart"
+          no-label
+          icon-size="20"
+        />
       </div>
 
       <!-- Hamburger Icon (Mobile) -->
       <button
-        class="md:hidden text-gray-600 hover:text-primary"
+        class="text-gray-600 md:hidden hover:text-primary"
         @click="isMobileMenuOpen = !isMobileMenuOpen"
       >
         <Icon name="mdi:menu" class="w-7 h-7" />
@@ -53,9 +53,9 @@
   </header>
 </template>
 
-<script setup>
-import TheNavigation from "~/components/Layout/TheNavigation.vue";
+<script setup lang="ts">
 import { ref } from "vue";
+import TheNavigation from "~/components/Layout/TheNavigation.vue";
 
 const isMobileMenuOpen = ref(false);
 </script>

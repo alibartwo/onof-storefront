@@ -12,6 +12,6 @@
 </template>
 
 <script lang="ts" setup>
-import FaqSection from '~/components/Faq/FaqSection.vue'
+import FaqSection from '~/components/Home/HomeFaqSection.vue'
 import InstagramSection from '~/components/Common/InstagramSection.vue'
 </script>

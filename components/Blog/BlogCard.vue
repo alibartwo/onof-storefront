@@ -4,6 +4,7 @@ defineProps<{
   excerpt: string;
   image: string;
   slug: string;
+  date: string;
 }>();
 </script>
 
@@ -33,11 +34,15 @@ defineProps<{
           {{ excerpt }}
         </p>
       </div>
-      <p
-        class="mt-4 text-xs font-medium text-gray-500 transition-colors group-hover:text-primary"
-      >
-        Detayları Gör →
-      </p>
+      <div class="flex justify-between w-full">
+        <p class="relative text-xs text-gray-500 top-3">{{ date }}</p>
+        <BaseButton
+          label="Detayları Gör →"
+          type="primary"
+          class="px-4 py-2 text-xs"
+          to="/blog/${slug}"
+        />
+      </div>
     </div>
   </NuxtLink>
 </template>
@@ -46,6 +51,7 @@ defineProps<{
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -53,6 +59,7 @@ defineProps<{
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

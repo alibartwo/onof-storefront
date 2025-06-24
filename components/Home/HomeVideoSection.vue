@@ -16,11 +16,16 @@
           width="1920"
           height="1080"
         />
-        <button class="absolute inset-0 flex items-center justify-center">
+        <button
+          class="absolute inset-0 flex items-center justify-center group transition-all"
+        >
           <div
-            class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg"
+            class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-105"
           >
-            <Icon name="uil:play" class="w-8 h-8 text-primary" />
+            <Icon
+              name="uil:play"
+              class="w-8 h-8 text-primary transition-all duration-200 group-hover:scale-110 group-hover:text-purple-800"
+            />
           </div>
         </button>
       </div>

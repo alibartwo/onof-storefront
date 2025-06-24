@@ -1,4 +1,3 @@
-<!-- components/FaqItem.vue -->
 <template>
   <div class="bg-primary/10 p-4 rounded-xl transition">
     <button
@@ -47,7 +46,7 @@ const open = ref(false);
 }
 .accordion-enter-to,
 .accordion-leave-from {
-  max-height: 500px; /* tahmini maksimum yükseklik */
+  max-height: 500px; 
   opacity: 1;
 }
 </style>
