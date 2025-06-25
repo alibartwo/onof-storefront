@@ -5,7 +5,7 @@
       src="/images/why-choose-us.png"
       alt="Onbaby aile pikniği"
       width="1920"
-      height="700"
+      height=auto
       class="w-full h-[700px] object-cover"
     />
 

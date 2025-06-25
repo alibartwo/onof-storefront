@@ -27,7 +27,7 @@
         />
         <div class="text-right mt-1">
           <NuxtLink
-            to="/forgot-password"
+            to="/auth/sifremi-unuttum"
             class="text-xs text-gray-400 hover:underline"
           >
             Şifrenizi mi unuttunuz?

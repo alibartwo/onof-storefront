@@ -12,7 +12,6 @@
   "dependencies": {
     "@medusajs/js-sdk": "^2.8.4",
     "@medusajs/types": "^2.8.4",
-    "@nuxt/content": "^3.6.1",
     "@nuxt/eslint": "^1.4.1",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.14.0",
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@nuxt/content": "^3.6.1",
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.29.0",

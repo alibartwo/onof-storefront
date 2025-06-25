@@ -28,7 +28,7 @@
             <li>
               <NuxtLink to="/auth/sifremi-unuttum">Şifremi Unuttum</NuxtLink>
             </li>
-            <li><NuxtLink to="/profil">Siparişlerim</NuxtLink></li>
+            <li><NuxtLink to="/">Siparişlerim</NuxtLink></li>
           </ul>
         </div>
 
@@ -38,8 +38,8 @@
           <ul class="space-y-2 text-gray-600">
             <li><NuxtLink to="/hakkimizda">Hakkımızda</NuxtLink></li>
             <li><NuxtLink to="/iletisim">İletişim</NuxtLink></li>
-            <li><NuxtLink to="/faq">SSS</NuxtLink></li>
-            <li><NuxtLink to="/yorumlar">Müşteri Yorumları</NuxtLink></li>
+            <li><NuxtLink to="/sss">SSS</NuxtLink></li>
+            <li><NuxtLink to="/">Müşteri Yorumları</NuxtLink></li>
           </ul>
         </div>
 
@@ -48,17 +48,17 @@
           <h4 class="font-semibold tracking-widest mb-4">BİLGİLENDİRME</h4>
           <ul class="space-y-2 text-gray-600">
             <li>
-              <NuxtLink to="/mesafeli-satis-sozlesmesi"
+              <NuxtLink to="/"
                 >Mesafeli Satış Sözleşmesi</NuxtLink
               >
             </li>
             <li>
-              <NuxtLink to="/gizlilik-guvenlik">Gizlilik ve Güvenlik</NuxtLink>
+              <NuxtLink to="/">Gizlilik ve Güvenlik</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/iptal-iade">İptal ve İade Koşulları</NuxtLink>
+              <NuxtLink to="/">İptal ve İade Koşulları</NuxtLink>
             </li>
-            <li><NuxtLink to="/kvkk">Kişisel Veriler Politikası</NuxtLink></li>
+            <li><NuxtLink to="/">Kişisel Veriler Politikası</NuxtLink></li>
           </ul>
         </div>
       </div>
@@ -73,7 +73,7 @@
       <p class="text-gray-500 mt-2 md:mt-0">
         Designed by
         <a
-          href="https://piwu.net"
+          href="https://piwu.tr"
           target="_blank"
           class="text-primary underline"
           >Piwu</a

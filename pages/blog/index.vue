@@ -21,9 +21,9 @@
           v-for="(post, index) in posts"
           :key="index"
           :title="post.title"
-          :excerpt="post.excerpt"
+          :excerpt="post.description"
           :image="post.image"
-          :slug="post.slug"
+          :slug="post.path"
           :date="post.date"
         />
       </div>
@@ -34,46 +34,16 @@
 <script setup lang="ts">
 import BlogCard from "@/components/Blog/BlogCard.vue";
 
-const posts = [
-  {
-    title: "Hijyenik Oyun Alanları Nasıl Oluşturulur?",
-    excerpt:
-      "Evde ve dış mekanda çocuklar için temiz, güvenli ve eğlenceli ortamlar yaratmanın yolları...",
-    image: "/images/hero-img.jpg",
-    slug: "hijyenik-oyun-alanlari",
-    date:"2023-10-01",
-  },
-  {
-    title: "Çocuklarda Sağlıklı Uyku Rutini Oluşturmak",
-    excerpt:
-      "Uyku düzeni, çocuk gelişiminin en önemli parçalarındandır. İşte birkaç öneri...",
-    image: "/images/hero-img.jpg",
-    slug: "saglikli-uyku-rutini",
-    date:"2023-10-01",
-  },
-  {
-    title: "Oyun Halısı Temizliği Nasıl Yapılır?",
-    excerpt:
-      "Oyun halıları hijyenin sağlanması açısından önemlidir. Temizlik ve bakım tüyoları...",
-    image: "/images/hero-img.jpg",
-    slug: "oyun-halisi-temizligi",
-    date:"2023-10-01",
-  },
-  {
-    title: "Bebeklerde Güvenli Oyun Ortamı",
-    excerpt:
-      "Bebekler için güvenli, hijyenik ve uyarıcı bir oyun alanı nasıl oluşturulur?",
-    image: "/images/hero-img.jpg",
-    slug: "bebeklerde-guvenli-oyun",
-    date:"2023-10-01",
-  },
-  {
-    title: "Evde Hijyen Kuralları ile Yaşamak",
-    excerpt:
-      "Aileler için kolay uygulanabilir temizlik ve hijyen ipuçları bu yazıda.",
-    image: "/images/hero-img.jpg",
-    slug: "evde-hijyen-kurallari",
-    date:"2023-10-01",
-  },
-];
+const route = useRoute();
+const { data: posts } = await useAsyncData(route.path, () => {
+  return queryCollection("blog")
+    .select("title", "description", "path", "image", "date")
+    .order("date", "DESC")
+    .all();
+});
+
+useSeoMeta({
+  title: "Blog - Çocuk Gelişimi ve Hijyen",
+  description: "Çocuk gelişimi, hijyen ve pratik önerilerle ilgili güncel yazılar.",
+});
 </script>

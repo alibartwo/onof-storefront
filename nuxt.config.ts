@@ -1,4 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { config } from 'dotenv'
+config()
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-05-15",
   devtools: { enabled: true },
@@ -12,4 +15,11 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
   ],
+
+  runtimeConfig: {
+    public: {
+      medusaBackendUrl: process.env.NUXT_PUBLIC_MEDUSA_BACKEND_URL,
+      medusaPublishableKey: process.env.NUXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+    },
+  },
 });

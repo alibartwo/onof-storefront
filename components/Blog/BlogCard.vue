@@ -2,18 +2,17 @@
 defineProps<{
   title: string;
   excerpt: string;
-  image: string;
+  image?: string;
   slug: string;
   date: string;
 }>();
 </script>
 
 <template>
-  <NuxtLink
-    :to="`/blog/${slug}`"
+  <div
     class="group flex gap-6 p-6 rounded-3xl bg-secondary hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
   >
-    <div class="flex-shrink-0 w-40 h-40 overflow-hidden rounded-xl">
+    <div class="flex-shrink-0 w-70 h-50 overflow-hidden rounded-xl">
       <NuxtImg
         :src="image"
         :alt="title"
@@ -40,11 +39,11 @@ defineProps<{
           label="Detayları Gör →"
           type="primary"
           class="px-4 py-2 text-xs"
-          to="/blog/${slug}"
+          :to="slug"
         />
       </div>
     </div>
-  </NuxtLink>
+  </div>
 </template>
 
 <style scoped>

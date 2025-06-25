@@ -1,18 +1,23 @@
 <template>
-  <form @submit.prevent="handleRegister" class="w-full max-w-md space-y-4">
-    <!-- Full Name -->
+  <form class="w-full max-w-md space-y-4" @submit.prevent="handleRegister">
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1"
-        >Ad Soyad</label
-      >
+      <label class="block text-sm font-medium text-gray-700 mb-1">Ad</label>
       <input
-        v-model="fullName"
+        v-model="firstName"
         type="text"
         class="w-full bg-gray-100 text-gray-900 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-700"
       />
     </div>
 
-    <!-- Email -->
+    <div>
+      <label class="block text-sm font-medium text-gray-700 mb-1">Soyad</label>
+      <input
+        v-model="lastName"
+        type="text"
+        class="w-full bg-gray-100 text-gray-900 rounded-md px-4 py-3 outline-none focus:ring-2 focus:ring-purple-700"
+      />
+    </div>
+
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-1"
         >E-posta</label
@@ -24,7 +29,6 @@
       />
     </div>
 
-    <!-- Password -->
     <div>
       <label class="block text-sm font-medium text-gray-700 mb-1">Şifre</label>
       <input
@@ -34,34 +38,50 @@
       />
     </div>
 
-    <!-- Submit Button -->
     <BaseButton
       type="primary"
-      label="Kaydol"
+      :label="loading ? 'Kaydoluyor...' : 'Kaydol'"
       class="w-full justify-center"
-      @click="handleRegister"
+      :disabled="loading"
     />
 
-    <!-- Already have an account -->
+    <p v-if="error" class="text-sm text-red-500 text-center">
+      {{ error }}
+    </p>
+
+    <p v-if="customer" class="text-sm text-green-600 text-center">
+      Hoş geldin, {{ customer.first_name }}!
+    </p>
+
     <p class="text-center text-sm text-gray-500 mt-4">
       Zaten hesabınız var mı?
       <NuxtLink
         to="/auth/giris"
         class="text-purple-700 font-semibold hover:underline"
-        >Giriş yap</NuxtLink
       >
+        Giriş yap
+      </NuxtLink>
     </p>
   </form>
 </template>
 
 <script setup lang="ts">
-import BaseButton from "~/components/Base/BaseButton.vue";
+import { ref } from "vue";
+import { useAuth } from "~/composables/useAuth";
 
-const fullName = ref("");
+const firstName = ref("");
+const lastName = ref("");
 const email = ref("");
 const password = ref("");
 
-const handleRegister = () => {
-  console.log("Kayıt bilgileri:", fullName.value, email.value, password.value);
+const { register, error, loading, customer } = useAuth();
+
+const handleRegister = async () => {
+  await register({
+    email: email.value,
+    password: password.value,
+    first_name: firstName.value,
+    last_name: lastName.value,
+  });
 };
 </script>
