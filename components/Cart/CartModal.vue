@@ -2,18 +2,20 @@
   <BaseModal @close="$emit('close')">
     <template #title>Sepetiniz ({{ items.length }})</template>
     <div class="space-y-4">
-      <div v-for="item in items" :key="item.id" class="flex justify-between">
+      <div v-for="item in items" :key="item.id" class="flex justify-between items-start">
         <div>
-          {{ item.variant_title }}
+          {{ item.variant_title }}<br />
           x{{ item.quantity }}
           <div class="text-sm text-gray-500">₺{{ (item.unit_price).toFixed(2) }}</div>
         </div>
-        <button @click="remove(item.id)">×</button>
+        <button class="text-gray-400 hover:text-primary" @click="remove(item.id)">
+          <Icon name="mdi:trash-can-outline" class="w-5 h-5" />
+        </button>
       </div>
       <div class="font-semibold">
         Toplam: ₺{{ (total).toFixed(2) }}
       </div>
-      <BaseButton @click="$emit('close')">Sepete Git</BaseButton>
+      <BaseButton type="primary" label="Sepete Git" to="/sepet" />
     </div>
   </BaseModal>
 </template>
