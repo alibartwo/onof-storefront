@@ -1,9 +1,9 @@
 <template>
   <section class="pt-12 bg-white">
     <div class="w-full px-0">
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
         <div
-          v-for="index in 7"
+          v-for="index in 4"
           :key="index"
           class="relative overflow-hidden group"
         >
