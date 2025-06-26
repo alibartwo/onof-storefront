@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-7xl mx-auto px-4 py-12 lg:flex lg:gap-10 min-h-screen">
+  <section v-if="product" class="max-w-7xl mx-auto px-4 py-12 lg:flex lg:gap-10 min-h-screen">
     <!-- Gallery -->
     <div class="w-full lg:w-1/2 space-y-4 overflow-y-auto max-h-[calc(100vh-120px)] pr-2">
       <div v-for="(img, index) in product?.images" :key="index"
@@ -51,8 +51,8 @@
       </div>
 
       <!-- Add to Cart -->
-      <BaseButton label="Sepete Ekle" type="primary" class="w-full mb-6 justify-center"
-        @click="() => console.log('Sepete ekle:', selectedVariant, quantity)" />
+      <BaseButton label="Sepete Ekle" type="primary" class="w-full mb-6 justify-center" :disabled="!selectedVariant"
+        @click="addToCart" />
 
       <!-- Details -->
       <div>
@@ -83,10 +83,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
 import { useProductStore } from '~/stores/products'
 import { useRegion } from '~/composables/useRegion'
 import type { HttpTypes } from "@medusajs/types"
+import { useCartStore } from '~/stores/cart'
 
 const productStore = useProductStore()
 const { isLoaded } = useRegion()
@@ -95,6 +95,18 @@ const selectedVariant = ref<HttpTypes.StoreProductVariant | null>(null)
 const quantity = ref(1)
 const selectedOption = ref<{ id: string; value: string } | null>(null)
 const openDetail = ref<number | null>(null)
+
+const cartStore = useCartStore()
+
+const addToCart = async () => {
+  if (!selectedVariant.value) return
+  try {
+    await cartStore.addItem(selectedVariant.value.id, quantity.value)
+    console.log('Ürün sepete eklendi')
+  } catch (err) {
+    console.error('Sepete eklerken hata:', err)
+  }
+}
 
 const detailItems: { title: string; content: string }[] = [
   {
@@ -111,6 +123,23 @@ const detailItems: { title: string; content: string }[] = [
   }
 ]
 
+watch(isLoaded, async (loaded) => {
+  if (!loaded) return
+  await productStore.fetchProduct()
+  product.value = productStore.products[0]
+
+  const firstVariant = product.value?.variants?.[0]
+  selectedVariant.value = firstVariant || null
+
+  const firstOption = firstVariant?.options?.[0]
+  if (firstOption) {
+    const matchingOpt = product.value?.options?.[0].values.find(
+      (o: HttpTypes.StoreProductOptionValue) => o.value === firstOption.value
+    )
+    selectedOption.value = matchingOpt || null
+  }
+}, { immediate: true })
+
 const selectVariant = (optionId: string) => {
   const selectedOpt = product.value?.options?.[0].values.find((o: HttpTypes.StoreProductOptionValue) => o.id === optionId)
   if (!selectedOpt) return
@@ -123,21 +152,6 @@ const selectVariant = (optionId: string) => {
     )
   ) || null
 }
-
-// fetch product when region is loaded
-watch(isLoaded, async (loaded) => {
-  if (loaded) {
-    await productStore.fetchProduct()
-    product.value = productStore.products[0]
-    const firstVariant = product.value?.variants?.[0]
-    selectedVariant.value = firstVariant || null
-    const firstOption = firstVariant?.options?.[0]
-    if (firstOption) {
-      const matchingOpt = product.value?.options?.[0].values.find((o: HttpTypes.StoreProductOptionValue) => o.value === firstOption.value)
-      selectedOption.value = matchingOpt || null
-    }
-  }
-})
 </script>
 
 <style scoped>

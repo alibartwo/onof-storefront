@@ -20,7 +20,9 @@
       </p>
       <p v-else>Calculated_price gelmedi.</p>
     </div>
+    <CartModal />
   </div>
+
 </template>
 
 <script setup lang="ts">
@@ -34,7 +36,7 @@ await watch(
   isLoaded,
   async (loaded) => {
     if (loaded) {
-      await productStore.fetchProduct("prod_01JYKKDNZVGNXD6XPEQFHNYGSK")
+      await productStore.fetchProduct()
     }
   },
   { immediate: true }

@@ -22,7 +22,14 @@
         <BaseButton v-else to="/hesabim" type="secondary" :label="`Merhaba, ${auth.customer.first_name}`"
           icon="mdi:account-circle" />
 
-        <BaseButton to="/sepet" type="primary" icon="uil:shopping-cart" no-label icon-size="20" />
+        <!-- Sepet Butonu ve Badge -->
+        <button class="relative" aria-label="Sepet" @click="toggleCartModal">
+          <BaseButton type="primary" icon="uil:shopping-cart" no-label icon-size="20" />
+          <span v-if="cartCount > 0"
+            class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            {{ cartCount }}
+          </span>
+        </button>
       </div>
 
       <!-- Mobile Menü -->
@@ -32,14 +39,29 @@
     </div>
 
     <TheNavigation v-if="isMobileMenuOpen" @close="isMobileMenuOpen = false" />
+
+    <!-- Sepet Modal -->
+    <CartModal v-if="showCartModal" @close="toggleCartModal" />
   </header>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useAuthStore } from '~/stores/auth'
+import { useCartStore } from '~/stores/cart'
 import TheNavigation from './TheNavigation.vue'
+import CartModal from '~/components/Cart/CartModal.vue'
 
 const auth = useAuthStore()
+const cartStore = useCartStore()
 const isMobileMenuOpen = ref(false)
+const showCartModal = ref(false)
+
+const cartCount = computed(() => cartStore.cart?.items?.length ?? 0)
+
+function toggleCartModal() {
+  console.log('toggleCartModal çalıştı') // DEBUG
+
+  showCartModal.value = !showCartModal.value
+}
 </script>
