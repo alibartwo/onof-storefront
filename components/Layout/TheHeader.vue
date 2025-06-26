@@ -10,7 +10,7 @@
         <nav class="items-center hidden gap-6 text-sm font-semibold text-gray-600 md:flex">
           <NuxtLink to="/" class="hover:text-primary">Anasayfa</NuxtLink>
           <NuxtLink to="/hakkimizda" class="hover:text-primary">Hakkımızda</NuxtLink>
-          <NuxtLink to="/urunler" class="hover:text-primary">Ürünler</NuxtLink>
+          <NuxtLink to="/urun" class="hover:text-primary">Ürünler</NuxtLink>
           <NuxtLink to="/blog" class="hover:text-primary">Blog</NuxtLink>
           <NuxtLink to="/iletisim" class="hover:text-primary">İletişim</NuxtLink>
         </nav>

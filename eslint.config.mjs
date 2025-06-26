@@ -7,6 +7,10 @@ export default withNuxt({
       html: {
         void: 'any'
       }
+    }],
+    'vue/first-attribute-linebreak': ['error', {
+      singleline: 'beside',
+      multiline: 'beside'
     }]
   }
 })
