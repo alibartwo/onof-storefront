@@ -15,7 +15,11 @@
       <div class="font-semibold">
         Toplam: ₺{{ (total).toFixed(2) }}
       </div>
-      <BaseButton type="primary" label="Sepete Git" to="/sepet" />
+      <div class="flex justify-between flex-row">
+        <BaseButton type="secondary" label="Sepete Git" to="/sepet" />
+        <BaseButton type="primary" label="Ödemeye Geç" to="/odeme" />
+      </div>
+
     </div>
   </BaseModal>
 </template>

@@ -103,6 +103,10 @@ export const useCartStore = defineStore("cart", () => {
     }
   };
 
+  const setCart = (value: HttpTypes.StoreCart | null) => {
+    cart.value = value;
+  };
+
   // initialize cart when region is loaded or changed
   watch([isLoaded, region], () => {
     initCart();
@@ -116,5 +120,6 @@ export const useCartStore = defineStore("cart", () => {
     addItem,
     updateItem,
     removeItem,
+    setCart,
   };
 });
