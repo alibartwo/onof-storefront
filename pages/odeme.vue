@@ -1,5 +1,6 @@
 <template>
-    <section v-if="cart && cart.items && cart.items.length > 0" class="max-w-screen-md h-225 mx-auto px-4 py-8">
+    <section v-if="(cart && cart.items && cart.items.length > 0) || step === 6"
+        class="max-w-screen-md h-225 mx-auto px-4 py-8">
         <h1 class="text-2xl font-bold mb-6">Ödeme</h1>
 
         <div class="space-y-6">
