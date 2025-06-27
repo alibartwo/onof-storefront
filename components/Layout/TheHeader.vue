@@ -1,7 +1,7 @@
 <template>
   <header class="sticky top-0 z-50 bg-white border-b border-gray-100">
     <div class="flex items-center justify-between max-w-screen-xl px-6 py-4 mx-auto">
-      <!-- Logo ve Navigation -->
+      <!-- Logo and Navigation -->
       <div class="flex items-center gap-4 md:gap-8">
         <NuxtLink to="/" class="shrink-0">
           <img src="/images/logo.png" alt="Logo" class="h-10 md:h-12" />
@@ -16,17 +16,17 @@
         </nav>
       </div>
 
-      <!-- Sağ Butonlar -->
+      <!-- Buttons -->
       <div class="items-center hidden gap-3 md:flex">
         <BaseButton v-if="!auth.customer" to="/auth/giris" label="Kullanıcı Girişi" type="secondary" />
         <BaseButton v-else to="/hesabim" type="secondary" :label="`Merhaba, ${auth.customer.first_name}`"
           icon="mdi:account-circle" />
 
-        <!-- Sepet Butonu ve Badge -->
+        <!-- Cart -->
         <button class="relative" aria-label="Sepet" @click="toggleCartModal">
           <BaseButton type="primary" icon="uil:shopping-cart" no-label icon-size="20" />
           <span v-if="cartCount > 0"
-            class="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            class="absolute -top-1 -right-1 bg-secondary text-primary text-xs rounded-full w-5 h-5 flex items-center justify-center">
             {{ cartCount }}
           </span>
         </button>
