@@ -10,7 +10,7 @@ const { cart } = useCartStore()
                 <li v-for="item in cart.items" :key="item.id"
                     class="group flex gap-6 p-4 rounded-2xl bg-secondary hover:shadow-md transition-all duration-300 hover:scale-[1.01]">
                     <div class="flex-shrink-0 w-32 h-32 overflow-hidden rounded-xl bg-white">
-                        <NuxtImg :src="item.thumbnail" :alt="item.title" width="128" height="128"
+                        <NuxtImg :src="item.images" :alt="item.title" width="128" height="128"
                             class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                             loading="lazy" />
                     </div>
