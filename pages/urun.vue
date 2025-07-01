@@ -4,7 +4,7 @@
     <div class="w-full lg:w-1/2 space-y-4 overflow-y-auto max-h-[calc(100vh-120px)] pr-2">
       <div v-for="(img, index) in product?.images" :key="index"
         class="rounded-xl aspect-square flex items-center justify-center overflow-hidden">
-        <NuxtImg :src="`${config.public.medusaBackendUrl}${img.url}`" :alt="product.title" format="webp" fit="contain"
+        <NuxtImg :src="`${img.url}`" :alt="product.title" format="webp" fit="contain"
           class="object-contain max-h-full max-w-full" width="600" height="600" />
       </div>
     </div>
@@ -88,7 +88,6 @@ import { useProductStore } from '~/stores/products'
 import { useRegion } from '~/composables/useRegion'
 import type { HttpTypes } from "@medusajs/types"
 import { useCartStore } from '~/stores/cart'
-const config = useRuntimeConfig()
 
 const productStore = useProductStore()
 const { isLoaded } = useRegion()
