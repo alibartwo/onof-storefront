@@ -16,7 +16,7 @@
               class="object-cover border border-gray-600 rounded-full" />
           </div>
           <p class="text-sm font-light text-primary">
-            50.000+ etkinlikte tercih edildi.
+            50.000+ etkinlikte tercih edildi..
           </p>
         </div>
 
